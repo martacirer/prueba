@@ -1815,6 +1815,7 @@ GameObject:
   - component: {fileID: 1892548739415178082}
   - component: {fileID: 1892548739405596762}
   - component: {fileID: 1892548739401892438}
+  - component: {fileID: -7919466427419696633}
   m_Layer: 0
   m_Name: Enemie2
   m_TagString: Untagged
@@ -1878,6 +1879,24 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 2.3, z: 0}
+--- !u!114 &-7919466427419696633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892548739415012744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcab28250df7da4187137dec345226a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rutina: 0
+  cronometro: 0
+  ani: {fileID: 0}
+  angulo: {x: 0, y: 0, z: 0, w: 0}
+  grado: 0
+  target: {fileID: 0}
 --- !u!1 &1892548739415013122
 GameObject:
   m_ObjectHideFlags: 0

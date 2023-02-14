@@ -1946,6 +1946,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 472645266414600041, guid: 9a4daeab979bb9740b262f01db414356, type: 3}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 9121497076654686478}
     - target: {fileID: 9057960913687095210, guid: 9a4daeab979bb9740b262f01db414356, type: 3}
       propertyPath: m_Name
       value: Enemie1
@@ -1960,7 +1964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9057960913687307946, guid: 9a4daeab979bb9740b262f01db414356, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.577489
+      value: 14.79
       objectReference: {fileID: 0}
     - target: {fileID: 9057960913687307946, guid: 9a4daeab979bb9740b262f01db414356, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2156,26 +2160,8 @@ MonoBehaviour:
   angulo: {x: 0, y: 0, z: 0, w: 0}
   grado: 0
   target: {fileID: 0}
---- !u!1 &9121497076643718109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9057960913687095210, guid: 9a4daeab979bb9740b262f01db414356, type: 3}
+--- !u!95 &9121497076654686478 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9057960913677744682, guid: 9a4daeab979bb9740b262f01db414356, type: 3}
   m_PrefabInstance: {fileID: 225820132430955639}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9121497076654686476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9121497076643718109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fcab28250df7da4187137dec345226a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rutina: 0
-  cronometro: 0
-  ani: {fileID: 0}
-  angulo: {x: 0, y: 0, z: 0, w: 0}
-  grado: 0
-  target: {fileID: 0}

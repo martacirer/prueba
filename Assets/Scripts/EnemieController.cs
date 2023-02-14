@@ -15,13 +15,13 @@ public class EnemieController : MonoBehaviour
 	void Start()
 	{
 		ani = GetComponent<Animator>();
-		target = GameObject.Find("Enemie1");
+		target = GameObject.Find("player");
 	}
 
 	public void Comportamiento_enemigo()
 	{
 	//cuando el jugador este fuera del rango del enemigo hara rutina de caminar aleatoriamente
-		if(Vector3.Distance(transform.position, target.transform.position) >5)
+		if(Vector3.Distance(transform.position, target.transform.position) >50)
 		{
 
 			ani.SetBool("run", false);
