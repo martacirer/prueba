@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Diana
   - proyectil
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,10 @@ public class EnemieController : MonoBehaviour
 	public Quaternion angulo;
 	public float grado;
 
+	public bool atacando;
+	public bool caminando;
+	public bool corriendo;
+
 	public GameObject target;
 
 	void Start()
@@ -24,16 +28,17 @@ public class EnemieController : MonoBehaviour
 		if(Vector3.Distance(transform.position, target.transform.position) >50)
 		{
 
-			ani.SetBool("run", false);
-			cronometro += 1 * Time.deltaTime;
+			corriendo = false;
+			cronometro +=  Time.deltaTime;
 			if(cronometro >= 4)
 			{
-				rutina = Random.Range(0, 2);
+				rutina = Random.Range(0, 3);
+				cronometro = 0;
 			}
 				switch(rutina)
 			{
 				case 0:
-					ani.SetBool("walk", false);
+					caminando = false;
 					break;
 
 				case 1:
@@ -44,26 +49,52 @@ public class EnemieController : MonoBehaviour
 
 				case 2:
 					transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
-					transform.Translate(Vector3.forward * 1 * Time.deltaTime);
-					ani.SetBool("walk", true);
+					transform.Translate(Vector3.forward * Time.deltaTime);
+					caminando = true;
 					break;
 				}
 		}
 		else
 		{
-			var lookPos = target.transform.position - transform.position;
-			lookPos.y = 0;
-			var rotation = Quaternion.LookRotation(lookPos);
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 2);
-			ani.SetBool("walk", false);
 
-			ani.SetBool("run", true);
-			transform.Translate(Vector3.forward * 2 * Time.deltaTime);
+			if(Vector3.Distance(transform.position, target.transform.position) > 1 && !atacando)
+			{
+
+			
+				var lookPos = target.transform.position - transform.position;
+				lookPos.y = 0;
+				var rotation = Quaternion.LookRotation(lookPos);
+				transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 2);
+				caminando = false;
+
+				corriendo = true;
+				transform.Translate(Vector3.forward * 2 * Time.deltaTime);
+
+				atacando = false;
+			}
+			else
+			{
+			caminando = false;
+			corriendo = false;
+
+			atacando = true;
+			}
 		}
 	}
 
+	public void Final_Ani()
+	{
+		atacando = false;
+	}
 	void Update()
 	{
 		Comportamiento_enemigo();
+	}
+
+	private void LateUpdate()
+	{
+		ani.SetBool("attack1", atacando);
+		ani.SetBool("walk", caminando);
+		ani.SetBool("run", corriendo);
 	}
 }
