@@ -74,6 +74,7 @@ public class EnemieController : MonoBehaviour
 			}
 			else
 			{
+			Debug.Log("ataque");
 			caminando = false;
 			corriendo = false;
 
@@ -82,10 +83,7 @@ public class EnemieController : MonoBehaviour
 		}
 	}
 
-	public void Final_Ani()
-	{
-		atacando = false;
-	}
+
 	void Update()
 	{
 		Comportamiento_enemigo();
@@ -93,7 +91,7 @@ public class EnemieController : MonoBehaviour
 
 	private void LateUpdate()
 	{
-		ani.SetBool("attack1", atacando);
+		ani.SetBool("attack", atacando);
 		ani.SetBool("walk", caminando);
 		ani.SetBool("run", corriendo);
 	}

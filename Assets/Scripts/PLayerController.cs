@@ -20,6 +20,8 @@ public class PLayerController : MonoBehaviour
     public GameObject PortalCircle;
     public Material PortalMat_Activado;
     //float velocity;
+    
+    public GameObject pickUp;
 
     private void Awake()
     {
@@ -31,6 +33,8 @@ public class PLayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;//Se oculta el raton
 
         Physics.gravity *= 1;
+
+        pickUp.SetActive(false);
     }
 
     void Update()
@@ -70,16 +74,23 @@ public class PLayerController : MonoBehaviour
               Epress = false;
          }
           
+
+         
     }
 
     //activar cambio de material cunado haya cogido la gema
     public void OnTriggerStay(Collider other)
     {
+
+        pickUp.SetActive(true);
+
         if(other.gameObject.CompareTag("Roc") && Epress == true)
         {
             Destroy(other.gameObject);
             PortalCircle.GetComponent<Renderer>().material = PortalMat_Activado;
             gemCollected = true;
+
+            pickUp.SetActive(false);
         }
     }
     
@@ -93,7 +104,7 @@ public class PLayerController : MonoBehaviour
         {
            
             Debug.Log("nivel 1 completado");
-            SceneManager.LoadScene("Levels");
+            SceneManager.LoadScene("LevelPassed");
         }
            
     }

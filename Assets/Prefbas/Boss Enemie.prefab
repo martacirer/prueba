@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3290628645012709784, guid: ad73ecccf0b665b4ba4f2380b6a1062e, type: 3}
       propertyPath: m_Name
-      value: Enemie3 1
+      value: Boss Enemie
       objectReference: {fileID: 0}
     - target: {fileID: 5865889139344366616, guid: ad73ecccf0b665b4ba4f2380b6a1062e, type: 3}
       propertyPath: "da\xF1oEnemigo"

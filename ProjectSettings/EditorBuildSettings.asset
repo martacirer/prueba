@@ -26,7 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HowToPlay.unity
     guid: fc79b0abb9ff52944ae230244a6c8bd7
+  - enabled: 1
+    path: Assets/Scenes/LevelPassed.unity
+    guid: c1fa3e0087e0cab4ea084bafa6d698b3
+  - enabled: 1
+    path: Assets/Scenes/LoseLevel.unity
+    guid: d99942d42ac7d4941983a9840d670a76
   - enabled: 0
-    path: Assets/Scenes/Gameover.unity
+    path: 
     guid: 27004a60df629304aa2070e9a06a0277
   m_configObjects: {}

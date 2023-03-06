@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyOutOfBounds : MonoBehaviour
 {
    private float xmax = 1000f;
-    private float ymax = 60f;
+    private float ymax = 150f;
     private float zmax = 1000f;
 
 
@@ -25,7 +25,7 @@ public class DestroyOutOfBounds : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (transform.position.y < 0)
+        if (transform.position.y < -ymax)
         {
             Destroy(gameObject);
         }
