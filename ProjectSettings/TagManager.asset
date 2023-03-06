@@ -7,6 +7,8 @@ TagManager:
   - Diana
   - proyectil
   - Enemy
+  - Roc
+  - Portal
   layers:
   - Default
   - TransparentFX

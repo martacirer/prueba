@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PLayerController : MonoBehaviour
 {
@@ -9,10 +11,14 @@ public class PLayerController : MonoBehaviour
     float verticalInput;
     public float speed = 10f;
     
+    public bool Epress = false;
+    private bool gemCollected = false;
    
     private Rigidbody playerRigidbody;
 
     public float forceJump;
+    public GameObject PortalCircle;
+    public Material PortalMat_Activado;
     //float velocity;
 
     private void Awake()
@@ -55,22 +61,41 @@ public class PLayerController : MonoBehaviour
             speed /= 2;
          }
 
+         if(Input.GetKeyDown(KeyCode.E))
+         {
+              Epress = true;
+         }
+         if(Input.GetKeyUp(KeyCode.E))
+         {
+              Epress = false;
+         }
           
     }
 
- 
-    
-    /*
-    void FixedUpdate()
+    //activar cambio de material cunado haya cogido la gema
+    public void OnTriggerStay(Collider other)
     {
-       
+        if(other.gameObject.CompareTag("Roc") && Epress == true)
+        {
+            Destroy(other.gameObject);
+            PortalCircle.GetComponent<Renderer>().material = PortalMat_Activado;
+            gemCollected = true;
+        }
+    }
+    
 
-       
-        //Movimiento horizontal del player
-        playerRigidbody.AddForce(playerRigidbody.gameObject.transform.right * speed * horizontalInput);
-       
-        //Movimiento vertical del player
-        playerRigidbody.AddForce(playerRigidbody.gameObject.transform.forward * speed * verticalInput);
-      
-    }*/
+
+    private void OnTriggerEnter (Collider otherCollider)
+    {
+
+        //cambiar de escena si has cogido la gema y tocas el portal
+        if (otherCollider.gameObject.CompareTag("Portal") && gemCollected == true)
+        {
+           
+            Debug.Log("nivel 1 completado");
+            SceneManager.LoadScene("Levels");
+        }
+           
+    }
+    
 }

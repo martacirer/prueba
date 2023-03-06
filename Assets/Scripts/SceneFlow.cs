@@ -13,31 +13,31 @@ public class SceneFlow : MonoBehaviour
 
      public void GoToOptionsMenu(string name)
     {
-        //Carga la escena principal
+        //Carga la escena opciones
         SceneManager.LoadScene("options");
     }
 
       public void GoToCreditssMenu(string name)
     {
-        //Carga la escena principal
+        //Carga la escena creditos
         SceneManager.LoadScene("credits");
     }
 
       public void GoToHowToPlayMenu(string name)
     {
-        //Carga la escena principal
+        //Carga la escena cmom jugar
         SceneManager.LoadScene("HowToPlay");
     }
 
       public void GoToLevelsMenu(string name)
     {
-        //Carga la escena principal
+        //Carga la escena niveles
         SceneManager.LoadScene("Levels");
     }
 
       public void GoToGame(string name)
     {
-        //Carga la escena principal
+        //Carga la escena game
         SceneManager.LoadScene("juego");
     }
 }
