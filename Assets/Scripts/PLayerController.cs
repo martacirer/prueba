@@ -9,7 +9,7 @@ public class PLayerController : MonoBehaviour
 {
     float horizontalInput;
     float verticalInput;
-    public float speed = 10f;
+    public float speed = 15f;
     
     public bool Epress = false;
     private bool gemCollected = false;
@@ -30,7 +30,7 @@ public class PLayerController : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;//Se oculta el raton
+       Cursor.lockState = CursorLockMode.Locked;
 
         Physics.gravity *= 1;
 
@@ -94,7 +94,7 @@ public class PLayerController : MonoBehaviour
         }
     }
     
-
+    
 
     private void OnTriggerEnter (Collider otherCollider)
     {
@@ -106,7 +106,9 @@ public class PLayerController : MonoBehaviour
             Debug.Log("nivel 1 completado");
             SceneManager.LoadScene("LevelPassed");
         }
-           
+         
+        
+       
     }
     
 }

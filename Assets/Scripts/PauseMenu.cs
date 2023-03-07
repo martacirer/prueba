@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;//Se oculta el raton
     }
     
-    void Pause()
+    public void Pause()
     {
         PauseMenuUI.SetActive(true);//Se muestra el panel
         Time.timeScale = 0f;//Se para el tiempo

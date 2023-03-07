@@ -16,6 +16,11 @@ public class EnemieController : MonoBehaviour
 
 	public GameObject target;
 
+	public float Speed;
+
+
+	
+
 	void Start()
 	{
 		ani = GetComponent<Animator>();
@@ -49,15 +54,17 @@ public class EnemieController : MonoBehaviour
 
 				case 2:
 					transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
-					transform.Translate(Vector3.forward * Time.deltaTime);
+					transform.Translate(Vector3.forward *Speed* Time.deltaTime);
 					caminando = true;
 					break;
 				}
 		}
 		else
 		{
+			
 
-			if(Vector3.Distance(transform.position, target.transform.position) > 1 && !atacando)
+
+			if(Vector3.Distance(transform.position, target.transform.position) > 2.1f && !atacando)
 			{
 
 			
@@ -68,7 +75,7 @@ public class EnemieController : MonoBehaviour
 				caminando = false;
 
 				corriendo = true;
-				transform.Translate(Vector3.forward * 2 * Time.deltaTime);
+				transform.Translate(Vector3.forward * 1.5f * Speed * Time.deltaTime);
 
 				atacando = false;
 			}
@@ -94,5 +101,8 @@ public class EnemieController : MonoBehaviour
 		ani.SetBool("attack", atacando);
 		ani.SetBool("walk", caminando);
 		ani.SetBool("run", corriendo);
+					
+		atacando = false;
+
 	}
 }
