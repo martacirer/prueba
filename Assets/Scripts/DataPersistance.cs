@@ -10,22 +10,22 @@ public class DataPersistance : MonoBehaviour
 
     void Awake()
     {
-        // Si la instancia no existe
+       
         if (PlayerStats == null)
         {
-            // Configuramos la instancia
+            
             PlayerStats = this;
-            // Nos aseguramos de que no sea destruida con el cambio de escena
+            
             DontDestroyOnLoad(PlayerStats);
         }
         else
         {
-            // Como ya existe una instancia, destruimos la copia
+            
             Destroy(this);
         }
     }
 
-    // Start is called before the first frame update
+   
     void Start()
     {
        
@@ -35,7 +35,7 @@ public class DataPersistance : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
     public void SaveStats()
     {
         PlayerPrefs.SetString("name", TextUser);

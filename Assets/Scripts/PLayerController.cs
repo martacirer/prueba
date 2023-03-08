@@ -42,7 +42,7 @@ public class PLayerController : MonoBehaviour
     }
 
     void Update()
-    {
+    {//mov player
          horizontalInput = Input.GetAxis("Horizontal");
          verticalInput = Input.GetAxis("Vertical");
 
@@ -51,8 +51,7 @@ public class PLayerController : MonoBehaviour
 
          if(Input.GetKeyDown(KeyCode.Space))
          {
-             //velocity = forceJump;
-             //transform.Translate(new Vector3(0, gravity * forceJump, 0) * Time.deltaTime);
+             
              playerRigidbody.AddForce(Vector3.up * forceJump, ForceMode.Impulse);
              
          }
@@ -82,7 +81,7 @@ public class PLayerController : MonoBehaviour
          
     }
 
-    //activar cambio de material cunado haya cogido la gema
+    //active the material when catch the gem
     public void OnTriggerStay(Collider other)
     {
 
@@ -107,11 +106,11 @@ public class PLayerController : MonoBehaviour
     private void OnTriggerEnter (Collider otherCollider)
     {
 
-        //cambiar de escena si has cogido la gema y tocas el portal
+        //change the scene when touch the portal
         if (otherCollider.gameObject.CompareTag("Portal") && gemCollected == true)
         {
            
-            Debug.Log("nivel 1 completado");
+            
             SceneManager.LoadScene("LevelPassed");
         }
          

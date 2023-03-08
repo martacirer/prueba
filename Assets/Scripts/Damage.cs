@@ -34,13 +34,13 @@ public class Damage : MonoBehaviour
 
         if (otherCollider.gameObject.CompareTag("proyectil"))
         {
-            Destroy(otherCollider.gameObject);//Destruye objecto cuando choca
-            bvEnemigo.vidaActual -= dañoAlEnemigo;// baja vida al enemigo
+            Destroy(otherCollider.gameObject);//Destroy object when collide
+            bvEnemigo.vidaActual -= dañoAlEnemigo;// enemy low life
             Debug.Log("daño");
 
             Instantiate(explosionParticleSystem,
                     transform.position,
-                explosionParticleSystem.transform.rotation);// particulas
+                explosionParticleSystem.transform.rotation);// particles
 
                 explosionParticleSystem.Play();
         }
@@ -52,7 +52,7 @@ public class Damage : MonoBehaviour
     {
         if (otherCollider.gameObject.CompareTag("Player"))
         {
-            bvJugador.vidaActual -= dañoAlJugador;//baja vida al player
+            bvJugador.vidaActual -= dañoAlJugador;//player low life
             Debug.Log("auch");
         }   
 

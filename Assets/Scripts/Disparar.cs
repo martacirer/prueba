@@ -13,20 +13,20 @@ public class Disparar : MonoBehaviour
 
     void Start()
     {
-        //Obtenemos la componente Audio Source
+        // component Audio Source
         Audio = GetComponent<AudioSource>();
-        PauseMenuScript = FindObjectOfType<PauseMenu>(); // encuentra el script
+        PauseMenuScript = FindObjectOfType<PauseMenu>(); // find script
     }
 
     void Update()
     {
         if (PauseMenu.GameIsPaused == false) 
         {
-            //Al pulsar click izquierdo
+            //left click
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Instantiate(projectilePrefab, transform.position, transform.rotation); //Instanciar proyectil en una posición determinada
-                Audio.PlayOneShot(shootClip, 1); //Reproducimos el audio de disparar
+                Instantiate(projectilePrefab, transform.position, transform.rotation); //instance bullet in a determinate position
+                Audio.PlayOneShot(shootClip, 1); //play the audio when you shot
 
             }
         }

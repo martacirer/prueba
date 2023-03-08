@@ -17,11 +17,7 @@ public class CodBrightness : MonoBehaviour
         Screen.brightness = slider.value;
     }
 
-    //Update is called once per frame
-    void Update()
-    {
-
-    }
+   
 
     public void ChangeSlider(float valor)
     {

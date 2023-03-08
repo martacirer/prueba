@@ -11,7 +11,7 @@ public class DestroyOutOfBounds : MonoBehaviour
 
     void Update()
     {
-        //Destruir bala cuando slaga de los limites
+        //destroy bullet when is out 
         if (transform.position.x > xmax)
         {
             Destroy(gameObject);

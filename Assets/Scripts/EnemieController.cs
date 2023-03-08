@@ -29,7 +29,7 @@ public class EnemieController : MonoBehaviour
 
 	public void Comportamiento_enemigo()
 	{
-	//cuando el jugador este fuera del rango del enemigo hara rutina de caminar aleatoriamente
+	//when the player is out of range, the enemy make rutine random
 		if(Vector3.Distance(transform.position, target.transform.position) >50)
 		{
 
