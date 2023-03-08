@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Roc
   - Portal
+  - GameMusic
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PLayerController : MonoBehaviour
@@ -23,6 +24,9 @@ public class PLayerController : MonoBehaviour
     
     public GameObject pickUp;
 
+    public GameObject Portal;
+    public GameObject Gem;
+
     private void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -32,9 +36,9 @@ public class PLayerController : MonoBehaviour
     {
        Cursor.lockState = CursorLockMode.Locked;
 
-        Physics.gravity *= 1;
+       Physics.gravity *= 1;
 
-        pickUp.SetActive(false);
+       pickUp.SetActive(false);
     }
 
     void Update()
@@ -91,6 +95,10 @@ public class PLayerController : MonoBehaviour
             gemCollected = true;
 
             pickUp.SetActive(false);
+
+            Gem.SetActive(false);
+            Portal.SetActive(true);
+            
         }
     }
     

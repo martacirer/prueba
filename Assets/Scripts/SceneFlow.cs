@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneFlow : MonoBehaviour
 {
+    public string PlayerName;
+
+    void Update()
+    {
+        
+    }
     public void GoToMainScene(string name)
     {
         //Carga la escena principal
@@ -39,5 +45,11 @@ public class SceneFlow : MonoBehaviour
     {
         //Carga la escena game
         SceneManager.LoadScene("juego");
+    }
+
+    public void RaedStringImput(string s)
+    {
+        PlayerName = s;
+        DataPersistance.PlayerStats.TextUser = PlayerName;
     }
 }

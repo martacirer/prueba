@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Damage : MonoBehaviour
 {
@@ -53,8 +54,6 @@ public class Damage : MonoBehaviour
         {
             bvJugador.vidaActual -= dañoAlJugador;//baja vida al player
             Debug.Log("auch");
-
-           
         }   
 
     }

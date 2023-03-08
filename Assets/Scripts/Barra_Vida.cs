@@ -11,13 +11,13 @@ public class Barra_Vida : MonoBehaviour
     public Image imagenBarraVida;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         vidaActual = vidaMax;
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         RevisarVida();
 
@@ -26,6 +26,15 @@ public class Barra_Vida : MonoBehaviour
             
 
             gameObject.SetActive(false);
+        }
+
+        if(gameObject.CompareTag("Player"))
+        {
+            if(vidaActual <= 0f)
+            {
+            SceneManager.LoadScene("LoseLevel");
+            }
+           
         }
     }
 
